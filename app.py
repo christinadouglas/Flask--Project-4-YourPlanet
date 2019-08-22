@@ -4,7 +4,7 @@ from flask_login import LoginManager
 # import models 
 
 # from api.user import user 
-# from api.api import api
+from api.api import api
 
 DEBUG = True
 PORT = 8000
@@ -28,7 +28,7 @@ def load_user(userid):
 
 
 # app.register_blueprint(user)
-# app.register_blueprint(api)
+app.register_blueprint(api)
 
 @app.before_request 
 def before_request():
