@@ -33,8 +33,10 @@ def register():
     except models.DoesNotExist: 
         
         payload['password'] = generate_password_hash(payload['password'])
+
+        user = models.User.create(username=payload['username'], password=payload)
     
-        user = models.User.create(**payload)
+        # user = models.User.create(**payload)
     
         print(type(user)) 
 
