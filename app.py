@@ -3,7 +3,7 @@ from flask_cors import CORS
 from flask_login import LoginManager
 # import models 
 
-# from api.user import user 
+from api.user import user 
 from api.api import api
 
 DEBUG = True
@@ -27,7 +27,7 @@ def load_user(userid):
 # CORS(user, origins=['http://localhost:3000'], supports_credentials=True)
 
 
-# app.register_blueprint(user)
+app.register_blueprint(user)
 app.register_blueprint(api)
 
 @app.before_request 
